@@ -1,8 +1,6 @@
 using System;
 using System.Diagnostics;
 using Microsoft;
-using Shell = Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 internal static class Logger

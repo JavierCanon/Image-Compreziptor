@@ -1,9 +1,6 @@
-# Image Optimizer for Visual Studio
+﻿# Image Optimizer for Windows 10
 
-[![Build status](https://ci.appveyor.com/api/projects/status/26hxodkud0i54rv5?svg=true)](https://ci.appveyor.com/project/madskristensen/imageoptimizer)
-
-Download this extension from the [VS Gallery](https://visualstudiogallery.msdn.microsoft.com/a56eddd3-d79b-48ac-8c8f-2db06ade77c3)
-or get the [nightly build](http://vsixgallery.com/extension/bf95754f-93d3-42ff-bfe3-e05d23188b08/).
+# THIS IS A DRAFT #
 
 --------------------------------
 
@@ -28,7 +25,7 @@ in that folder.
 Simply right-click any file or folder containing images and click 
 one of the image optimization buttons.
 
-![Context menu](art/context-menu.png)
+![Context menu](docs/images/context-menu.png)
 
 You can also right-click a folder to optimize all images inside it.
 
@@ -47,7 +44,7 @@ fraction of image quality loss.
 The Output Window shows the detailed output from the optimization
 process and progress is displayed in the status bar.
 
-![Output window](art/output-window.png)
+![Output window](docs/images/output-window.png)
 
 ## Performance
 Optimizing an image can easily take several seconds which feels
@@ -56,27 +53,6 @@ available on the machine. This speeds up the optimization
 significantly.
 
 ## API for extenders
-Any extension can call the commands provided in the Image Optimizer extension to optimize any image. 
-
-```c#
-public void OptimizeImage(string filePath)
-{
-	try
-	{
-		var DTE = (DTE2)Package.GetGlobalService(typeof(DTE));
-		Command command = DTE.Commands.Item("ImageOptimizer.OptimizeLossless");
-
-		if (command != null && command.IsAvailable)
-		{
-			DTE.Commands.Raise(command.Guid, command.ID, filePath, null);
-		}
-	}
-	catch (Exception ex)
-	{
-		// Image Optimizer not installed
-	}
-}
-```
 
 The commands are:
 
@@ -87,11 +63,16 @@ The commands are:
 Check out the [contribution guidelines](.github/CONTRIBUTING.md)
 if you want to contribute to this project.
 
-For cloning and building this project yourself, make sure 
-to install the
-[Extensibility Tools 2015](https://visualstudiogallery.msdn.microsoft.com/ab39a092-1343-46e2-b0f1-6a3f91155aa6)
-extension for Visual Studio which enables some features
-used by this project.
+## Credits
+[Mads Kristensen / ImageOptimizer](https://github.com/madskristensen/ImageOptimizer)
+
 
 ## License
-[Apache 2.0](LICENSE) 
+[Apache 2.0](LICENSE) for [Mads Kristensen / ImageOptimizer]  
+
+This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE.md) file for details.
+
+Made with ❤️ by [Javier Cañon](https://www.javiercanon.com).
+
+
+

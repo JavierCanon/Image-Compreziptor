@@ -4,10 +4,6 @@ using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using EnvDTE;
-using EnvDTE80;
-using Microsoft;
-using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
 namespace MadsKristensen.ImageOptimizer
